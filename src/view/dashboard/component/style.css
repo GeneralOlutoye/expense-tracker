@@ -1,0 +1,57 @@
+.dashboardMainContent{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    background-color: rgb(235, 235, 235);
+}
+.cardWrapper{
+    width: 100%!important;
+    background-color: white!important;
+    border-radius: 5px!important;
+    box-shadow: 5px 5px 10px 5px #3333!important;
+    margin-bottom: 20px;
+}
+.topCard{
+    display: flex;
+    /* gap: 20px; */
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    width: 300px!important;
+    height: 150px;
+    background-color: white!important;
+    border-radius: 5px!important;
+    box-shadow: 5px 5px 10px 5px #3333!important;
+}
+.card p{
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: -7px;
+}
+.cardChild{
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+}
+.wallet{
+    background-color: #2b872b!important;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+}
+.wallet p{
+    font-size: 20px;
+    font-weight: 500;
+}
+.cardText{
+    font-weight: 700;
+    font-size: 30px;
+}
