@@ -1,0 +1,33 @@
+[
+    {
+        "id": 1,
+        "title": "Diesel",
+        "amount": 400,
+        "style": "green"
+    },
+    {
+        "id": 2,
+        "title": "Maintenance",
+        "amount" : 245
+    },
+    {
+        "id": 3,
+        "title": "Groceries",
+        "amount" : 330
+    },
+    {
+        "id": 4,
+        "title": "Power-Bill",
+        "amount": 250
+    },
+    {
+        "id": 5,
+        "title": "Data",
+        "amount": 180
+    },
+    {
+        "id": 6,
+        "title": "Tax",
+        "amount": 300
+    }
+]
