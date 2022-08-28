@@ -42,16 +42,18 @@ export const Render = () => {
             const priceAdd = inputAmount + price
             setPrice(priceAdd)
             setIncome(inc)
-            // setColor()
         }
         else if (checkedInput.name === "expense") {
             const exp = expense + inputAmount
             const nowtotal = price - inputAmount
             setExpense(exp)
             setPrice(nowtotal)
-            // setColor('red')
         }
 
+    }
+    const clearInput = () => {
+        let inputTag = document.getElementsByClassName('inputTag')
+        inputTag.textContent = ''
     }
     const changeHandler = (item) => {
         item === checked ? setChecked(null) : setChecked(item)
@@ -60,7 +62,7 @@ export const Render = () => {
     return (
         <div className="planningWrapper">
             <section className="title" >
-                <h1 style={{ gap: 10, fontFamily: 'sans-serif' }}>EXPENSE TRACKER</h1>
+                <h1 className="expensTracker">EXPENSE TRACKER</h1>
             </section>
             <section className="section1">
                 <h3>MY BALANCE</h3>
@@ -79,7 +81,7 @@ export const Render = () => {
             <div className="container">
                 <div className="AddTransaction">
                     <div className="transaction">
-                        <h2 style={{textAlign: 'center', textDecoration: 'underline'}} >Make New Transaction</h2>
+                        <h2 style={{ textAlign: 'center', textDecoration: 'underline' }} >Make New Transaction</h2>
                         <form onSubmit={submitHandler} >
                             <span className="form">
                                 <label style={{ fontSize: '20px', fontWeight: 400 }}> Title: </label>
@@ -88,31 +90,34 @@ export const Render = () => {
                                     placeholder="Enter title..."></input>
                                 <br />
                                 <label style={{ fontSize: '20px', fontWeight: 400 }}> Amount: </label>
-                                <input type="text" className="forum" required
+                                <input type="number" className="forum" required
                                     name="amount"
                                     onChange={addInputHandler}
                                     placeholder="Enter amount..." ></input>
                                 <div ref={radiosWrapper} >
                                     <label className="radioLabel"  >
-                                        <input type="radio" className="incomeRadio" key={1} checked={checked === "Income"} onChange={() => changeHandler("Income")} name="income" style={{ backgroundColor: 'green' }} /> <span style={{ color: 'green' }}> Income </span>
+                                        <input type="radio" className="incomeRadio inputTag" key={1} checked={checked === "Income"} onChange={() => changeHandler("Income")} name="income" style={{ backgroundColor: 'green' }} /> <span style={{ color: 'green' }}> Income </span>
                                     </label>
                                     <label className="radioLabel" >
-                                        <input type="radio" className="radioInput" key={2} checked={checked === "expense"} onChange={() => changeHandler("expense")} name="expense" /><span style={{ color: 'red' }}> Expense </span>
+                                        <input type="radio" className="radioInput inputTag" key={2} checked={checked === "expense"} onChange={() => changeHandler("expense")} name="expense" /><span style={{ color: 'red' }}> Expense </span>
                                     </label>
                                 </div>
-                                <button onSubmit={submitHandler}>ADD TRANSACTION</button>
+                                <button onClick={clearInput} onSubmit={submitHandler}>ADD TRANSACTION</button>
                             </span>
                         </form>
                     </div>
                 </div>
                 <div className="AddTransaction">
                     <div className="history">
-                        <h2 style={{textDecoration: 'underline'}} >History</h2>
-                        <ol>
-                            {transaction.map((expense, id) => {
-                                return <li style={{ marginBottom: '10px', fontWeight: 600 }} key={id}> {expense.title}: <span> ${expense.amount}</span> </li>
-                            })}
-                        </ol>
+                        <section className="historyHeader"><h2 style={{ textDecoration: 'underline' }} >History</h2></section>
+                        <section>
+                            <ol>
+                                {transaction.map((expense, id) => {
+                                    return <li style={{ marginBottom: '10px', fontWeight: 600 }} key={id}> {expense.title}: <span> ${expense.amount}</span> </li>
+                                })}
+                            </ol>
+                        </section>
+
                     </div>
                 </div>
             </div>

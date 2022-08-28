@@ -6,6 +6,12 @@
   align-items: center;
   background-color: rgb(235, 235, 235);
 }
+.expenseTracker{
+  background-image: linearGradient (60deg, green, red);
+  color: transparent;
+  background-clip: text;
+
+}
 .section1{
   text-align: center;
   width: 97%!important;
@@ -42,14 +48,14 @@
   align-items: center;
   margin-top: 25px;
   width: 100%!important;
-  min-height: 50vh;
+  height: 50vh;
+  max-height: 50vh;
   background-color: inherit;
   justify-content: space-around;
 }
 .AddTransaction{
   background-color: #3333;
   width: 46%;
-  /* text-align: center; */
   justify-content: center;
   display: flex;
   border-radius: 15px;
@@ -63,11 +69,24 @@
   width: 80%;
 }
 .history{
+  display: flex;
+  flex-direction: column;
   text-align: center;
   width: 95%;
   height: 90%;
   border: solid;
   border-image: linear-gradient(to right, green, rgb(255, 130, 130)) 0.5;
+  overflow-y: scroll;
+}
+.history::-webkit-scrollbar{
+  width: 10px;
+  box-shadow: inset 0 0 2px green;
+}
+.history::-webkit-scrollbar-thumb{
+  background: green;
+}
+.historyHeader{
+  background-color: #ffffff;
 }
 .form{
   display: flex;
