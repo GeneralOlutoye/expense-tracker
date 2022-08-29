@@ -108,7 +108,7 @@ button{
   padding-top: 12px;
   padding-bottom: 12px;
   border: 1px solid white;
-  background-color: green;
+  background-color: green!important;
   color: #ffffff;
   cursor: pointer;
   border-radius: 5px;

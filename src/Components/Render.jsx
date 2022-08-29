@@ -52,9 +52,11 @@ export const Render = () => {
 
     }
     const clearInput = () => {
-        let inputTag = document.getElementsByClassName('inputTag')
+        let inputTag = document.getElementById('inputTag')
         inputTag.textContent = ''
     }
+    console.log(clearInput)
+    
     const changeHandler = (item) => {
         item === checked ? setChecked(null) : setChecked(item)
     }
@@ -96,13 +98,13 @@ export const Render = () => {
                                     placeholder="Enter amount..." ></input>
                                 <div ref={radiosWrapper} >
                                     <label className="radioLabel"  >
-                                        <input type="radio" className="incomeRadio inputTag" key={1} checked={checked === "Income"} onChange={() => changeHandler("Income")} name="income" style={{ backgroundColor: 'green' }} /> <span style={{ color: 'green' }}> Income </span>
+                                        <input type="radio" className="incomeRadio" id="inputTag" key={1} checked={checked === "Income"} onChange={() => changeHandler("Income")} name="income" style={{ backgroundColor: 'green' }} /> <span style={{ color: 'green' }}> Income </span>
                                     </label>
                                     <label className="radioLabel" >
-                                        <input type="radio" className="radioInput inputTag" key={2} checked={checked === "expense"} onChange={() => changeHandler("expense")} name="expense" /><span style={{ color: 'red' }}> Expense </span>
+                                        <input type="radio" className="radioInput" id="inputTag" key={2} checked={checked === "expense"} onChange={() => changeHandler("expense")} name="expense" /><span style={{ color: 'red' }}> Expense </span>
                                     </label>
                                 </div>
-                                <button onClick={clearInput} onSubmit={submitHandler}>ADD TRANSACTION</button>
+                                <button onSubmit={submitHandler} onClick={clearInput}>ADD TRANSACTION</button>
                             </span>
                         </form>
                     </div>
