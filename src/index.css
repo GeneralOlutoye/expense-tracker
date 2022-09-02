@@ -91,6 +91,9 @@
     border-radius: 5px!important;
     box-shadow: 5px 5px 10px 5px #3333!important;
   }
+  .dashboard{
+    width: 70%;
+  }
 }
 .history{
   display: flex;
