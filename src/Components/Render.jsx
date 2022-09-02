@@ -49,6 +49,10 @@ export const Render = () => {
             setExpense(exp)
             setPrice(nowtotal)
         }
+        e.target.reset()
+
+        let inputTag = document.getElementById('inputTag').value
+        inputTag.textContent = ''
 
     }
     const clearInput = () => {
@@ -56,7 +60,7 @@ export const Render = () => {
         inputTag.textContent = ''
     }
     console.log(clearInput)
-    
+
     const changeHandler = (item) => {
         item === checked ? setChecked(null) : setChecked(item)
     }
@@ -115,7 +119,7 @@ export const Render = () => {
                         <section>
                             <ol>
                                 {transaction.map((expense, id) => {
-                                    return <li style={{ marginBottom: '10px', fontWeight: 600 }} key={id}> {expense.title}: <span> ${expense.amount}</span> </li>
+                                    return <li style={{ marginBottom: '10px', fontWeight: 600, textTransform: 'capitalize' }} key={id}> {expense.title}: <span> ${expense.amount}</span> </li>
                                 })}
                             </ol>
                         </section>
