@@ -8,13 +8,14 @@ export const Render = () => {
     const [price, setPrice] = useState(1275);
     const radiosWrapper = useRef();
     const [checked, setChecked] = useState(null)
-    // const [color, setColor] = useState('black')
 
     const [addData, setAddData] = useState({
         text: '',
         amount: '',
     })
 
+    {/*a function that takes the value of the input entered and sets it to the value of addData*/}
+    
     const addInputHandler = (e) => {
         e.preventDefault()
         const inputs = e.target.getAttribute("name")
@@ -24,7 +25,7 @@ export const Render = () => {
 
         setAddData(newData);
     }
-
+    {/*a function that handles submit and adds data entered to either income or expense and transaction history as well*/}
     const submitHandler = (e) => {
         e.preventDefault()
         const newInputs = {
@@ -55,6 +56,9 @@ export const Render = () => {
         inputTag.textContent = ''
 
     }
+    
+    {/*function that clears the inputs after data have been submitted */}
+    
     const clearInput = () => {
         let inputTag = document.getElementById('inputTag')
         inputTag.textContent = ''
